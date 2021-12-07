@@ -1,4 +1,4 @@
-from linked_list.linked_list import LinkedList
+from code_challenges.link_list_insertions.linked_list import LinkedList
 
 def test_append_end():
     list = LinkedList()

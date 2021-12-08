@@ -64,3 +64,17 @@ class LinkedList:
 
         output += "NULL"
         return output
+
+    def kth_from_end(self, k):
+        if k < 0:
+            raise ValueError
+
+        for _ in range(k):
+            if self.head.next is None:
+                raise ValueError
+            self.head = self.head.next
+
+        while self.head.next is not None:
+            self.head = self.head.next
+
+        return self.head.value

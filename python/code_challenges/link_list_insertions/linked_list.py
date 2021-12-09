@@ -5,8 +5,9 @@ class Node:
 
 class LinkedList:
 
-    def __init__(self):
+    def __init__(self, next=None):
         self.head = None
+        self.next = next
 
     def insert(self, value):
         self.head = Node(value, self.head)
@@ -38,7 +39,7 @@ class LinkedList:
         return self.head
 
     def insert_after(self, value, position):
-        new = Node(value)
+        new = Node()
         pointer = self.head
         counter = 1
         if position == 0:
@@ -78,3 +79,22 @@ class LinkedList:
             self.head = self.head.next
 
         return self.head.value
+
+    def merge_list(self, a, b):
+        a_curr = a.head
+        b_curr = b.head
+
+        while a_curr and b_curr:
+
+            a_next = a_curr.next
+            a_curr.next = b_curr
+            a_curr = a_next
+
+            b_next = b_curr.next
+            b_curr.next = a_curr
+            b_curr = b_next
+
+            if a_curr.next is None:
+                a_curr.next = b_curr
+                return a
+        return a

@@ -49,6 +49,21 @@ class BinaryTree:
         walk(self.root)
         return post_list
 
+    def max_value(self):
+
+        def walk(root, max):
+            if root is None:
+                return max
+            elif max < root.value:
+                max = root.value
+            max = walk(root.left, max)
+            return walk(root.right, max)
+
+        if self.root is None:
+            return
+        else:
+            return walk(self.root, self.root.value)
+
 class BinarySearchTree(BinaryTree):
 
     def add(self, value):

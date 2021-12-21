@@ -7,6 +7,7 @@ Binary Search Tree
 
 Binary Tree Class with pre_order, in_order, post_order methods
 Binary Search Tree class with add and contains methods
+Get the max value from the Binary Tree
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->

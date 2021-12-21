@@ -68,3 +68,36 @@ def test_binary_search_contains_true():
     one.right = Node (3)
     bst = BinarySearchTree(one)
     assert bst.contains(3) == True
+
+def test_tree_max_empty():
+    tree = BinaryTree()
+    assert tree.max_value() is None
+
+def test_tree_max():
+    one = Node(1)
+    one.left = Node(2)
+    one.right = Node(3)
+    tree = BinaryTree(one)
+    assert tree.max_value() == 3
+
+def test_tree_max_more_nodes():
+    one = Node(1)
+    one.left = Node(2)
+    one.right = Node(3)
+    one.left.left = Node(4)
+    one.left.right = Node(5)
+    one.right.left = Node(6)
+    one.right.right = Node(7)
+    tree = BinaryTree(one)
+    assert tree.max_value() == 7
+
+def test_tree_max_mix_numbers():
+    one = Node(1)
+    one.left = Node(20)
+    one.right = Node(33)
+    one.left.left = Node(4)
+    one.left.right = Node(500)
+    one.right.left = Node(49)
+    one.right.right = Node(17)
+    tree = BinaryTree(one)
+    assert tree.max_value() == 500

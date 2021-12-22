@@ -32,7 +32,7 @@ def test_queue_dequeue_multi():
 
     queue.dequeue()
 
-    assert queue.peek() == 3
+    assert queue.peek() == 2
 
 
 def test_queue_peek():

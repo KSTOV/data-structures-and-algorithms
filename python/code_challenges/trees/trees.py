@@ -104,3 +104,28 @@ class BinarySearchTree(BinaryTree):
             return False
 
         return walk(self.root, value)
+
+class KaryTree:
+    def __init__(self, root=None):
+        self.root = root
+
+    def add(self, value):
+        node = Node(value)
+        if self.root is None:
+            self.root = node
+
+        def walk(root, add_node):
+            if root is None:
+                return
+
+            if add_node.value < root.value:
+                if root.left:
+                    walk(root.left, add_node)
+                else:
+                    root.left = add_node
+            else:
+                if root.right:
+                    walk(root.right, add_node)
+                else:
+                    root.right = add_node
+        walk(self.root, node)

@@ -1,22 +1,27 @@
 from code_challenges.trees.trees import Node
 from code_challenges.trees.trees import BinaryTree
 from code_challenges.tree_breadth_first.breadth_first import breadth_first
+import pytest
 
+# @pytest.mark.skip("TODO")
 def test_breadth_first():
     tree = BinaryTree()
     assert breadth_first(tree) == []
 
+# @pytest.mark.skip("TODO")
 def test_breadth_first_root():
     one = Node(1)
     tree = BinaryTree(one)
     assert breadth_first(tree) == [1]
 
+# @pytest.mark.skip("TODO")
 def test_breadth_first_left():
     one = Node(1)
     one.left = Node(2)
     tree = BinaryTree(one)
     assert breadth_first(tree) == [1,2]
 
+# @pytest.mark.skip("TODO")
 def test_breadth_first_right():
     one = Node(1)
     one.right = Node(3)
@@ -30,6 +35,7 @@ def test_breadth_first():
     tree = BinaryTree(one)
     assert breadth_first(tree) == [1,2,3]
 
+# @pytest.mark.skip("TODO")
 def test_breadth_first_more():
     one = Node(1)
     one.left = Node(2)
@@ -41,6 +47,7 @@ def test_breadth_first_more():
     tree = BinaryTree(one)
     assert breadth_first(tree) == [1,2,3,4,5,6,7]
 
+# @pytest.mark.skip("TODO")
 def test_breadth_first_more_different_order():
     one = Node(1)
     one.left = Node(7)

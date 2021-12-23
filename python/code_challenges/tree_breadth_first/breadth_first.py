@@ -17,4 +17,12 @@ def breadth_first(tree):
         if dequeue.right:
             queue.enqueue(dequeue.right)
 
+# reverse a list
+
+    # L = len(list)
+    # for i in range(int(L/2)):
+    #     n = list[i]
+    #     list[i] = list[L-i-1]
+    #     list[L-i-1] = n
+
     return list

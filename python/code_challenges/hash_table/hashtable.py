@@ -2,7 +2,7 @@ class Hashtable:
 
     def __init__(self, size=1024):
         self.size = size
-        self.buckets = [[]] * self.size
+        self.buckets = [[] for _ in range(self.size)]
 
     def hash(self, key):
         sum_hash = 0
@@ -35,8 +35,8 @@ class Hashtable:
         for element in self.buckets[idx]:
             if element[0] == key:
                 return True
-            else:
-                return False
+
+        return False
 
 
 

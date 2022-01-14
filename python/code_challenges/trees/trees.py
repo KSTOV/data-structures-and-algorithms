@@ -66,27 +66,25 @@ class BinaryTree:
 
 class BinarySearchTree(BinaryTree):
 
-    def add(self, value):
-        node = Node(value)
+    def add(self, value=None):
         if self.root is None:
-            self.root = node
+            self.root = Node(value)
+            return
+            
+        def walk(root, value):
 
-        def walk(root, add_node):
-            if root is None:
-                return
-
-            if add_node.value < root.value:
-                if root.left:
-                    walk(root.left, add_node)
+            if root.value > value:
+                if root.left is None:
+                    root.left = Node(value)
                 else:
-                    root.left = add_node
-            else:
-                if root.right:
-                    walk(root.right, add_node)
-                else:
-                    root.right = add_node
+                    walk(root.left, value)
 
-        walk(self.root, node)
+            elif root.value < value:
+                if root.right is None:
+                    root.right = Node(value)
+                else:
+                    walk(root.right, value)
+        walk(self.root, value)
 
     def contains(self, value):
         if self.root is None:
